@@ -72,11 +72,6 @@ if user_query:
                 st.chat_message("assistant").write(response.text)
             except:
                 st.error("দুঃখিত, আমি এই মুহূর্তে উত্তর দিতে পারছি না। অনুগ্রহ করে বইয়ের নাম লিখে সার্চ করুন।")
-
-                model = genai.GenerativeModel('gemini-1.5-flash', tools=[{"google_search_retrieval": {}}])
-if results.empty:
-    search_url = f"https://www.dawateislami.net/bookslibrary/search?query={user_query}"
-    st.info(f"দুঃখিত, আমাদের সংগ্রহে এটি নেই। আপনি সরাসরি [এখানে ক্লিক করে দাওয়াতে ইসলামীর ওয়েবসাইটে সার্চ করতে পারেন]({search_url})।")
-    
+                
 st.divider()
 st.caption("Powered by Google Gemini AI | আপনার সেবায় নিয়োজিত")
